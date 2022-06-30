@@ -22,6 +22,7 @@ const request_time_gauge = new prometheus.Gauge({
 const request_time_histogram = new prometheus.Histogram({
   name: 'app_hist_request_time',
   help: 'Histograma do Tempo de Resposta das Requisições em Milisegundos',
+  buckets: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
 });
 
 const request_time_summary = new prometheus.Summary({
