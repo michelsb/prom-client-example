@@ -1,0 +1,23 @@
+{
+  "name": "prom-client-example",
+  "version": "1.0.0",
+  "description": "Aplicação em Node que tempo por objetivo exemplificar o usa da biblioteca do Prometheus para a criação e exposição de métricas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michelsb/prom-client-example.git"
+  },
+  "author": "Michel Sales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michelsb/prom-client-example/issues"
+  },
+  "homepage": "https://github.com/michelsb/prom-client-example#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "prom-client": "^14.0.1"
+  }
+}
