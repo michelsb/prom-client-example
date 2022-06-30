@@ -8,26 +8,25 @@ collectDefaultMetrics({ register });
 const app = express();
 
 const request_total_counter = new prometheus.Counter({
-  name: 'request_total',
+  name: 'app_request_total',
   help: 'Contador de Requisições',
   labelNames: ['method', 'statusCode'],
 });
 
 const request_time_gauge = new prometheus.Gauge({
-  name: 'request_time_seconds',
-  help: 'Último Tempo de Resposta Registrado',
+  name: 'app_request_time',
+  help: 'Último Tempo de Resposta Registrado em Milisegundos',
   labelNames: ['method', 'statusCode'],
 });
 
 const request_time_histogram = new prometheus.Histogram({
-  name: 'hist_request_time_seconds',
-  help: 'Histograma do Tempo de Resposta das Requisições',
-  buckets: [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
+  name: 'app_hist_request_time',
+  help: 'Histograma do Tempo de Resposta das Requisições em Milisegundos',
 });
 
 const request_time_summary = new prometheus.Summary({
-  name: 'summ_request_time_seconds',
-  help: 'Resumo do Tempo de Resposta das Requisições',
+  name: 'app_summ_request_time',
+  help: 'Resumo do Tempo de Resposta das Requisições em Milisegundos',
   percentiles: [0.01, 0.05, 0.5, 0.9, 0.95, 0.99, 0.999],
 });
 
